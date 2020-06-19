@@ -15,35 +15,35 @@ public enum ResultCode {
     USER_CLIENT_ERROR("A0001", "用户端错误"),
 
     USER_REGISTERED_ERROR("A0100", "用户注册错误"),
-    USER_USERNAME_CHECK_ERROR("A0110", "用户名校验失败"),
+    USER_USERNAME_CHECK_FAILED("A0110", "用户名校验失败"),
     USER_USERNAME_HAS_EXISTED("A0111", "用户名已存在"),
     USER_USERNAME_CONTAINS_SENSITIVE_WORDS("A0112", "用户名包含敏感词"),
     USER_USERNAME_CONTAINS_SPECIAL_CHARACTERS("A0113", "用户名包含特殊字符"),
 
-    USER_PASSWORD_CHECK_ERROR("A0120", "密码校验失败"),
+    USER_PASSWORD_CHECK_FAILED("A0120", "密码校验失败"),
     USER_PASSWORD_LENGTH_NOT_ENOUGH("A0121", "密码长度不够"),
     USER_PASSWORD_WEAK("A0122", "密码强度不够"),
 
     USER_CHECK_CODE_INPUT_ERROR("A0130", "校验码输入错误"),
     USER_SMS_CODE_INPUT_ERROR("A0131", "短信校验码输入错误"),
 
-    USER_CERTIFICATE_ERROR("A0140", "用户证件异常"),
+    USER_CERTIFICATE_EXCEPTION("A0140", "用户证件异常"),
     USER_CERTIFICATE_TYPE_NOT_CHOOSE("A0141", "用户证件类型未选择" ),
 
-    USER_BASIC_INFORMATION_ERROR("A0150", "用户基本信息校验失败"),
-    USER_MOBILE_FORMAT_ERROR("A0151", "手机格式校验失败"),
-    USER_ADDRESS_FORMAT_ERROR("A0152", "地址格式校验失败"),
-    USER_EMAIL_FORMAT_ERROR("A0153", "邮箱格式校验失败"),
+    USER_BASIC_INFORMATION_FAILED("A0150", "用户基本信息校验失败"),
+    USER_MOBILE_FORMAT_FAILED("A0151", "手机格式校验失败"),
+    USER_ADDRESS_FORMAT_FAILED("A0152", "地址格式校验失败"),
+    USER_EMAIL_FORMAT_FAILED("A0153", "邮箱格式校验失败"),
 
-    USER_LOGIN_ERROR("A0200", "用户登陆异常"),
+    USER_LOGIN_EXCEPTION("A0200", "用户登陆异常"),
     USER_ACCOUNT_NOT_EXIST("A0201", "用户账户不存在"),
-    USER_ACCOUNT_FREEZE("A0202", "用户账户被冻结"),
+    USER_ACCOUNT_FROZEN("A0202", "用户账户被冻结"),
     USER_ACCOUNT_HAS_INVALIDED("A0203", "用户账户已作废"),
 
     USER_PASSWORD_ERROR("A0210", "用户密码错误"),
     USER_PASSWORD_INPUT_OVER_LIMIT("A0211", "用户输入密码次数超限"),
 
-    USER_IDENTITY_CHECK_ERROR("A0220", "用户身份校验失败"),
+    USER_IDENTITY_CHECK_FAILED("A0220", "用户身份校验失败"),
     USER_NOT_AUTHORIZED_BY_THIRD_PARTY("A0223", "用户未获得第三方登陆授权"),
 
     USER_LOGIN_EXPIRED("A0230", "用户登陆已过期"),
@@ -51,7 +51,7 @@ public enum ResultCode {
     USER_VERIFICATION_CODE_ERROR("A0240", "用户验证码错误"),
     USER_VERIFICATION_CODE_TRY_OVER_LIMIT("A0241", "用户验证码尝试次数超限"),
 
-    USER_ACCESS_ERROR("A0300", "访问权限异常"),
+    USER_ACCESS_EXCEPTION("A0300", "访问权限异常"),
     USER_UNAUTHORIZED_ACCESS("A0301" , "访问未授权"),
     USER_AUTHORIZING("A0302", "正在授权中"),
     USER_AUTHORIZATION_EXPIRED("A0311", "授权已过期"),
@@ -59,10 +59,10 @@ public enum ResultCode {
 
     USER_ACCESS_BLOCKED("A0320", "用户访问被拦截"),
     USER_STATUS_BLACK("A0321", "黑名单用户"),
-    USER_ILLEGAL_IP("A0323", "非法 IP 地址"),
+    USER_REQUEST_IP_ILLEGAL("A0323", "非法 IP 地址"),
     USER_REGIONAL_BLACK("A0325", "地域黑名单"),
 
-    USER_SIGNATURE_ERROR("A0340", "用户签名异常"),
+    USER_SIGNATURE_EXCEPTION("A0340", "用户签名异常"),
     USER_RSA_SIGNATURE_ERROR("A0341", "RSA 签名错误"),
 
     USER_REQUEST_PARAM_ERROR("A0400", "用户请求参数错误"),
@@ -71,8 +71,8 @@ public enum ResultCode {
     USER_REQUEST_FILL_PARAM_EMPTY("A0410", "请求必填参数为空"),
     USER_ORDER_ID_EMPTY("A0411", "用户订单号为空"),
     USER_ORDER_QUANTITY_EMPTY("A0412", "订购数量为空"),
-    USER_REQUEST_PARAM_MISSING_TIMESTAMP("A0413", "缺少时间戳参数"),
-    USER_REQUEST_PARAM_ILLEGAL_TIMESTAMP("A0414", "非法的时间戳参数"),
+    USER_REQUEST_PARAM_TIMESTAMP_MISSING("A0413", "缺少时间戳参数"),
+    USER_REQUEST_PARAM_TIMESTAMP_ILLEGAL("A0414", "非法的时间戳参数"),
 
     USER_REQUEST_PARAM_OVER_LIMIT("A0420", "请求参数值超出允许的范围"),
     USER_REQUEST_PARAM_NOT_MATCH("A0421", "参数格式不匹配"),
@@ -81,7 +81,6 @@ public enum ResultCode {
     USER_REQUEST_BATCH_NUMBER_OVER_LIMIT("A0426", "请求批量处理总个数超出限制"),
     USER_REQUEST_JSON_PARSE_FAILED("A0427", "请求 JSON 解析失败"),
 
-
     USER_ACTION_EXCEPTION("A0440", "用户操作异常"),
     USER_PAYMENT_TIMEOUT("A0441", "用户支付超时"),
     USER_ORDER_TIMEOUT("A0442", "确认订单超时"),
@@ -89,7 +88,7 @@ public enum ResultCode {
 
     USER_REQUEST_SERVER_EXCEPTION("A0500", "用户请求服务异常"),
     USER_REQUEST_TIMES_OVER_LIMIT("A0501", "请求次数超出限制"),
-    USER_WEB_SOCKET_CONNECT_EXCEPTION("A0504", "用户重复请求"),
+    USER_WEB_SOCKET_CONNECT_EXCEPTION("A0504", "WebSocket 连接异常"),
     USER_WEB_SOCKET_CONNECT_BROKE("A0505", "WebSocket 连接断开"),
     USER_REQUEST_REPEATABLE("A0506", "用户重复请求"),
 
