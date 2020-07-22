@@ -57,7 +57,7 @@ public class GlobalExceptionHandler {
             BindingResult bindingResult = exs.getBindingResult();
             bindingResult.getFieldErrors().forEach(fieldError -> sb.append(fieldError.getDefaultMessage() + "||"));
         }
-        return new ResponseEntity<>(ResultDTO.of(ResultCode.PARAMETER_ERROR, sb.toString()), HttpStatus.OK);
+        return new ResponseEntity<>(ResultDTO.of(ResultCode.USER_REQUEST_PARAM_ERROR, sb.toString()), HttpStatus.OK);
     }
 
     /**
@@ -66,7 +66,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ResultDTO> exceptionHandler(Exception ex) {
         LOGGER.error("unknownException => ", ex);
-        return new ResponseEntity<>(ResultDTO.of(ResultCode.INTERNAL_SERVER_ERROR), HttpStatus.OK);
+        return new ResponseEntity<>(ResultDTO.of(ResultCode.BIZ_SYSTEM_EXECUTE_ERROR), HttpStatus.OK);
     }
 
 }
