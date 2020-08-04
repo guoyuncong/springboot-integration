@@ -12,8 +12,10 @@ import lombok.Getter;
 public enum ResultCode {
     SUCCESS("00000", "请求成功"),
 
+    /**
+     * 用户模块
+     */
     USER_CLIENT_ERROR("A0001", "用户端错误"),
-
     USER_REGISTERED_ERROR("A0100", "用户注册错误"),
     USER_USERNAME_CHECK_FAILED("A0110", "用户名校验失败"),
     USER_USERNAME_HAS_EXISTED("A0111", "用户名已存在"),
@@ -102,6 +104,9 @@ public enum ResultCode {
     USER_UPDATE_VIDEO_LARGE("A0704", "用户上传视频太大"),
     USER_UPLOAD_COMPRESSED_FILE_LARGE("A0705", "用户上传压缩文件太大"),
 
+    /**
+     * 系统模块
+     */
     BIZ_SYSTEM_EXECUTE_ERROR("B0001", "系统执行出错"),
     BIZ_SYSTEM_EXECUTE_TIMEOUT("B0100", "系统执行超时"),
     BIZ_SYSTEM_ORDER_PROCESS_TIMEOUT("B0101", "系统订单处理超时"),
@@ -110,6 +115,9 @@ public enum ResultCode {
     BIZ_SYSTEM_THREAD_POOL_EXHAUSTED("B0315", "系统线程池耗尽"),
     BIZ_SYSTEM_RESOURCE_ACCESS_EXCEPTION("B0320", "系统资源访问异常"),
 
+    /**
+     * 三方服务模块
+     */
     THIRD_PARTY_CALL_ERROR("C0001", "调用第三方服务出错"),
     THIRD_PARTY_MIDDLEWARE_SERVICE_ERROR("C0100", "中间件服务出错"),
     THIRD_PARTY_RPC_SERVICE_ERROR("C0110", "RPC 服务出错"),
