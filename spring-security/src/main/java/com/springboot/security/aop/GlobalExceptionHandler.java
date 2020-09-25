@@ -1,20 +1,18 @@
-package com.springboot.exception.demo.aop;
+package com.springboot.security.aop;
 
-import com.springboot.exception.demo.enums.ResultCode;
-import com.springboot.exception.demo.exception.BizException;
-import com.springboot.exception.demo.model.dto.ResultDTO;
+import com.springboot.security.enums.ResultCode;
+import com.springboot.security.exception.BizException;
+import com.springboot.security.model.dto.ResultDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import javax.validation.ConstraintViolationException;
-import java.sql.SQLException;
 
 /**
  * 全局异常处理类
@@ -26,13 +24,10 @@ public class GlobalExceptionHandler {
 
     /**
      * 业务异常
-     *
-     * @param ex 捕获异常
-     * @return ResponseEntity<ResultDTO>
      */
     @ExceptionHandler({BizException.class})
     public ResponseEntity<ResultDTO> bizExceptionHandler(Exception ex) {
-        LOGGER.error("bizException => ", ex);
+        LOGGER.error("paramsException => ", ex);
         BizException biz = (BizException) ex;
         if (biz.getDetail() == null) {
             return new ResponseEntity<>(ResultDTO.of(biz.getCode()), HttpStatus.OK);
@@ -43,18 +38,17 @@ public class GlobalExceptionHandler {
 
     /**
      * 参数异常
-     *
-     * @param ex 异常
-     * @return ResponseEntity<ResultDTO>
+     * @param ex
+     * @return
      */
     @ExceptionHandler({ConstraintViolationException.class, MethodArgumentNotValidException.class, IllegalArgumentException.class})
-    public ResponseEntity<ResultDTO> requestParamsExceptionHandle(Exception ex) {
+    public ResponseEntity<ResultDTO> ConstraintViolationExceptionHandle(Exception ex) {
         StringBuilder sb = new StringBuilder();
         if (ex instanceof ConstraintViolationException) {
             ConstraintViolationException constraintViolationException = (ConstraintViolationException) ex;
             constraintViolationException.getConstraintViolations().forEach(constraintViolation -> sb.append(constraintViolation.getMessage() + "||"));
         }
-        if (ex instanceof MethodArgumentNotValidException) {
+        if(ex instanceof MethodArgumentNotValidException){
             MethodArgumentNotValidException exs = (MethodArgumentNotValidException) ex;
             BindingResult bindingResult = exs.getBindingResult();
             bindingResult.getFieldErrors().forEach(fieldError -> sb.append(fieldError.getDefaultMessage() + "||"));
