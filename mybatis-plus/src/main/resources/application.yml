@@ -1,0 +1,14 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://122.224.64.250:3306/ygn_ship_empty?serverTimezone=Asia/Shanghai&allowMultiQueries=true
+    username: root
+    password: yagena*2020&2019
+mybatis-plus:
+  type-aliases-package: com.springboot.mybatisplus
+  mapper-location: classpath*:mappers/*.xml
+

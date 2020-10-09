@@ -3,7 +3,7 @@
 <mapper namespace="com.springboot.druid.mapper.ShipMapper">
 
 
-    f<select id="list" resultType="com.springboot.druid.model.entity.Ship" >
+    <select id="list" resultType="com.springboot.druid.model.entity.Ship" >
         select * from ship where ship_id = #{id, jdbcType=VARCHAR};
     </select>
 </mapper>
