@@ -17,7 +17,7 @@ import javax.validation.constraints.NotBlank;
 public class StudentCtl {
 
     @PostMapping(value = "/student/save")
-    public ResponseEntity<?> saveStudent(@RequestBody StudentParam studentParam) {
+    public ResponseEntity<?> saveStudent(StudentParam studentParam) {
         System.out.println("Aaaaaaaaaa");
         return ResponseEntity.ok(null);
     }
