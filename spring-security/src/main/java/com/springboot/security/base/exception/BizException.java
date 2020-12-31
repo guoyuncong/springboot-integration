@@ -1,6 +1,6 @@
-package com.springboot.security.exception;
+package com.springboot.security.base.exception;
 
-import com.springboot.security.enums.ResultCode;
+import com.springboot.security.base.enums.ResultCode;
 import lombok.Getter;
 
 @Getter

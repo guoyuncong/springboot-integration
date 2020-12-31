@@ -1,4 +1,4 @@
-package com.springboot.security.enums;
+package com.springboot.security.base.enums;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

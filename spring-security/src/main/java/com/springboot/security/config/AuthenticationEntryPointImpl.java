@@ -1,7 +1,7 @@
 package com.springboot.security.config;
 
-import com.springboot.security.enums.ResultCode;
-import com.springboot.security.exception.BizException;
+import com.springboot.security.base.enums.ResultCode;
+import com.springboot.security.base.exception.BizException;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;

@@ -1,7 +1,7 @@
-package com.springboot.security.aop;
+package com.springboot.security.base.aop;
 
-import com.springboot.security.enums.ResultCode;
-import com.springboot.security.exception.BizException;
+import com.springboot.exception.demo.enums.ResultCode;
+import com.springboot.exception.demo.exception.BizException;
 import com.springboot.security.model.dto.ResultDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

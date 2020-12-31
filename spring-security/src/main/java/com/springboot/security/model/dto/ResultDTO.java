@@ -1,6 +1,6 @@
 package com.springboot.security.model.dto;
 
-import com.springboot.security.enums.ResultCode;
+import com.springboot.exception.demo.enums.ResultCode;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
